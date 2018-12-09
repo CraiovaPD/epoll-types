@@ -25,7 +25,7 @@ export interface IDebate<T> {
 export interface IPollDebate {
   title: string,
   content: string,
-  attachements: any[],
+  attachments: any[],
   options: Array<{
     _id: string,
     reason: string
