@@ -16,6 +16,7 @@ export enum DebateType {
 export interface IDebate<T> {
   _id: string,
   createdAt: Date,
+  createdBy: string,
   type: DebateType,
   state: DebateState,
   payload: T
