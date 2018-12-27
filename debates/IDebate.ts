@@ -19,13 +19,13 @@ export interface IDebate<T> {
   createdBy: string,
   type: DebateType,
   state: DebateState,
+  title: string,
+  content: string,
   payload: T
 }
 
 // debate payload types
 export interface IPollDebate {
-  title: string,
-  content: string,
   attachments: any[],
   options: Array<{
     _id: string,
@@ -47,8 +47,8 @@ export interface IDebatePollListItem {
   createdAt: Date,
   type: DebateType,
   state: DebateState,
+  title: string,
   payload: {
-    title: string,
     votes: {
       count: number
     }
