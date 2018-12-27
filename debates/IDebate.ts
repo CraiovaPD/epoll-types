@@ -46,6 +46,7 @@ export interface IDebatePollListItem {
   _id: string,
   createdAt: Date,
   type: DebateType,
+  state: DebateState,
   payload: {
     title: string,
     votes: {
