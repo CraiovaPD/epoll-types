@@ -1,4 +1,5 @@
 import { IVote } from './IVote';
+import { IAttachment } from './IAttachment';
 
 export enum DebateState {
   draft, published, unpublished
@@ -26,7 +27,7 @@ export interface IDebate<T> {
 
 // debate payload types
 export interface IPollDebate {
-  attachments: any[],
+  attachments: IAttachment[],
   options: Array<{
     _id: string,
     reason: string
@@ -35,6 +36,10 @@ export interface IPollDebate {
     count: number,
     data: IVote[]
   }
+}
+
+export interface IAnouncementDebate {
+  attachments: IAttachment[]
 }
 
 // other debate representations
@@ -52,5 +57,18 @@ export interface IDebatePollListItem {
     votes: {
       count: number
     }
+  }
+}
+
+/**
+ * Debate Anouncement list projection.
+ */
+export interface IDebateAnouncementListItem {
+  _id: string,
+  createdAt: Date,
+  type: DebateType,
+  state: DebateState,
+  title: string,
+  payload: {
   }
 }
